@@ -1,0 +1,37 @@
+%YAML 1.2
+---
+# http://www.sublimetext.com/docs/3/syntax.html
+name: LaTeX Bibliographic Codepage and Sort Definition (CS)
+comment: |
+  Grammer based on csfile.txt of bib­tex8bit, available at https://ctan.org/tex-archive/biblio/bibtex/8-bit.
+file_extensions:
+  - csf
+scope: text.tex.cs
+contexts:
+  prototype:
+    - include: comments
+
+  main:
+    - include: general-commands
+
+  general-commands:
+    - match: '(\\)[A-Za-z@]+'
+      scope: support.function.general.latex
+      captures:
+        1: punctuation.definition.backslash.latex
+      push:
+      - meta_scope: meta.environment.latex
+      - match: '\{'
+        scope: punctuation.definition.group.brace.begin.latex
+        set:
+          - meta_scope: meta.environment.latex meta.group.brace.latex
+          - match: '[\-\_]'
+            scope: support.function.latex
+          - match: '\}'
+            scope: punctuation.definition.group.brace.end.latex
+            pop: true
+
+
+  comments:
+    - match: '%.*$\n?'
+      scope: comment.line.percentage.tex

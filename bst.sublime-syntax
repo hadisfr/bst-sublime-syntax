@@ -19,17 +19,17 @@ contexts:
       push: string
     - match: '\#[0-9]+'
       scope: constant.numeric.tex
-    - match: \b('ENTRY|EXECUTE|FUNCTION|INTEGERS|ITERATE|MACRO|READ|REVERSE|SORT|STRINGS|COMMENT|PREAMBLE|STRING')\b
+    - match: \b(ENTRY|EXECUTE|FUNCTION|INTEGERS|ITERATE|MACRO|READ|REVERSE|SORT|STRINGS|COMMENT|PREAMBLE|STRING)\b
       scope: keyword.control.command.tex
     - match: (=|>|<|\+|\-|\*|:=)
       scope: keyword.operator.tex
     - match: (')
       scope: keyword.operator.varname.tex
-    - match: '(\\)(citation|bibdata|bibstyle|@input)\b'
+    - match: (\\)(citation|bibdata|bibstyle|@input)\b
       captures:
         0: keyword.control.command.tex
         1: punctuation.definition.backslash.tex
-    - match: (\'?)('add\.period|call\.type|change\.case|chr\.to\.int|cite|duplicate|empty|format\.name|if|int\.to\.chr|int\.to\.str|missing|newline|num\.names|pop|preamble|purify|quote|skip|stack|substring|swap|text\.length|text\.prefix|top|type|warning|width|while|width|write')(\$)
+    - match: (\'?)(add\.period|call\.type|change\.case|chr\.to\.int|cite|duplicate|empty|format\.name|if|int\.to\.chr|int\.to\.str|missing|newline|num\.names|pop|preamble|purify|quote|skip|stack|substring|swap|text\.length|text\.prefix|top|type|warning|width|while|width|write)(\$)
       captures:
         0: keyword.control.function.tex
         1: keyword.operator.varname.tex

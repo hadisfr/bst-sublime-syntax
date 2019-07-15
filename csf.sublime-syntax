@@ -15,20 +15,20 @@ contexts:
     - include: general-commands
 
   general-commands:
-    - match: '(\\)[A-Za-z@]+'
+    - match: (\\)[A-Za-z@]+
       scope: support.function.general.latex
       captures:
         1: punctuation.definition.backslash.latex
       push:
       - meta_scope: meta.environment.latex
       - match: '\{'
-        scope: punctuation.definition.group.brace.begin.latex
+        scope: punctuation.definition.brace.begin.latex
         set:
           - meta_scope: meta.environment.latex meta.group.brace.latex
-          - match: '[\-\_]'
+          - match: (\-|\_)
             scope: support.function.latex
           - match: '\}'
-            scope: punctuation.definition.group.brace.end.latex
+            scope: punctuation.definition.brace.end.latex
             pop: true
 
 

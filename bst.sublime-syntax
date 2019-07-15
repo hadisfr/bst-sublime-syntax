@@ -25,6 +25,8 @@ contexts:
       scope: keyword.operator.tex
     - match: (')
       scope: keyword.operator.varname.tex
+    - match: (\$)
+      scope: keyword.operator.functioncall.tex
     - match: (\\)(citation|bibdata|bibstyle|@input)\b
       captures:
         0: keyword.control.command.tex
@@ -33,13 +35,14 @@ contexts:
       captures:
         0: keyword.control.function.tex
         1: keyword.operator.varname.tex
-        3: punctuation.definition.dollarsign.tex
+        3: keyword.operator.functioncall.tex
     - match: '\{'
       scope: punctuation.definition.brace.begin.tex
     - match: '\}'
       scope: punctuation.definition.brace.end.tex
-    - match: '\.'
-      scope: punctuation.definition.dot.tex
+    - match: \b[A-Za-z][A-Za-z\.]*\b
+      scope: variable.other.tex
+
 
   string:
     - meta_scope: string.quoted.double.tex

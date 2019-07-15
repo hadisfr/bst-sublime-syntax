@@ -36,6 +36,15 @@ contexts:
         0: keyword.control.function.tex
         1: keyword.operator.varname.tex
         3: keyword.operator.functioncall.tex
+    - match: (\'?)(sort\.key|entry\.max|global\.max)(\$)
+      captures:
+        0: keyword.control.command.tex
+        1: keyword.operator.varname.tex
+        3: keyword.operator.functioncall.tex
+    - match: (\'?)(crossref)\b
+      captures:
+        0: keyword.control.command.tex
+        1: keyword.operator.varname.tex
     - match: '\{'
       scope: punctuation.definition.brace.begin.tex
     - match: '\}'

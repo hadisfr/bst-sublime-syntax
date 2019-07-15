@@ -1,0 +1,51 @@
+%YAML 1.2
+---
+# http://www.sublimetext.com/docs/3/syntax.html
+name: LaTeX Bibliographic Style (bst)
+comment: |
+  Grammer based on
+    implemention of bib­tex8bit, available at https://ctan.org/tex-archive/biblio/bibtex/8-bit,
+    and
+    TameTheBeast, available at https://ctan.org/pkg/tamethebeast.
+file_extensions:
+  - bst
+scope: text.tex.bst
+contexts:
+  prototype:
+    - include: comments
+
+  main:
+    - match: '"'
+      push: string
+    - match: '\#[0-9]+'
+      scope: constant.numeric.tex
+    - match: \b('ENTRY|EXECUTE|FUNCTION|INTEGERS|ITERATE|MACRO|READ|REVERSE|SORT|STRINGS|COMMENT|PREAMBLE|STRING')\b
+      scope: keyword.control.command.tex
+    - match: (=|>|<|\+|\-|\*|:=)
+      scope: keyword.operator.tex
+    - match: (')
+      scope: keyword.operator.varname.tex
+    - match: '(\\)(citation|bibdata|bibstyle|@input)\b'
+      captures:
+        0: keyword.control.command.tex
+        1: punctuation.definition.backslash.tex
+    - match: (\'?)('add\.period|call\.type|change\.case|chr\.to\.int|cite|duplicate|empty|format\.name|if|int\.to\.chr|int\.to\.str|missing|newline|num\.names|pop|preamble|purify|quote|skip|stack|substring|swap|text\.length|text\.prefix|top|type|warning|width|while|width|write')(\$)
+      captures:
+        0: keyword.control.function.tex
+        1: keyword.operator.varname.tex
+        3: punctuation.definition.dollarsign.tex
+    - match: '\{'
+      scope: punctuation.definition.brace.begin.tex
+    - match: '\}'
+      scope: punctuation.definition.brace.end.tex
+    - match: '\.'
+      scope: punctuation.definition.dot.tex
+
+  string:
+    - meta_scope: string.quoted.double.tex
+    - match: '"'
+      pop: true
+
+  comments:
+    - match: '%.*$\n?'
+      scope: comment.line.percentage.tex

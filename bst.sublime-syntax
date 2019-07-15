@@ -49,7 +49,7 @@ contexts:
       scope: punctuation.definition.brace.begin.tex
     - match: '\}'
       scope: punctuation.definition.brace.end.tex
-    - match: \b[A-Za-z][A-Za-z\.]*\b
+    - match: \b[A-Za-z\.0-9]+\b
       scope: variable.other.tex
 
 

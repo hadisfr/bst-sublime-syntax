@@ -17,7 +17,7 @@ contexts:
   main:
     - match: '"'
       push: string
-    - match: '\#[0-9]+'
+    - match: '\#(\-?)[0-9]+'
       scope: constant.numeric.tex
     - match: \b(ENTRY|EXECUTE|FUNCTION|INTEGERS|ITERATE|MACRO|READ|REVERSE|SORT|STRINGS|COMMENT|PREAMBLE|STRING)\b
       scope: keyword.control.command.tex

@@ -1,8 +1,8 @@
-# bst-sublime-syntax
+# bst syntax for Sublime Text
 
 [![Sublime-Text](https://img.shields.io/badge/SublimeText-Syntax%20Definition-orange.svg?style=flat-square)](https://www.sublimetext.com/docs/3/syntax.html)
 [![GitHub release](https://img.shields.io/github/release/hadisfr/bst-sublime-syntax.svg?style=flat-square)](https://github.com/hadisfr/bst-sublime-syntax/releases/latest)
-[![Package Control](https://img.shields.io/packagecontrol/dt/bst-sublime-syntax.svg?style=flat-square)](https://packagecontrol.io/packages/bst-sublime-syntax)
+[![Package Control](https://img.shields.io/packagecontrol/dt/bst%20syntax.svg?style=flat-square)](https://packagecontrol.io/packages/bst%20syntax)
 
 sublime syntax definition for LaTeX Bibliography Style (bst) files
 

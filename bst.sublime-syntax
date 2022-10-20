@@ -55,6 +55,7 @@ contexts:
 
   string:
     - meta_scope: string.quoted.double.tex
+    - meta_include_prototype: false
     - match: '"'
       pop: true
 
